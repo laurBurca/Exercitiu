@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+    <style>
+
+body {
+    margin: 0px;
+    padding: 104px;
+}
+
+/* Style the form - display items horizontally */
+.form-inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Add some margins for each label */
+.form-inline label {
+  font-family: Helvetica;
+font-size: 12px;
+font-weight: 500;
+color: #03030380;
+}
+
+/* Style the input fields */
+.form-inline input {
+    vertical-align: middle;
+    padding: 2px 0 2px 0;
+    border: none;
+}
+
+/* Style the submit button */
+.form-inline button {
+  padding: 12px 25px 12px 25px;
+  gap: 0px;
+  border-radius: 24px;
+  background-color: #467E8B;
+  border: 1px solid #ddd;
+  color: white;
+  height: 56px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.filter-button {
+  width: 224px;
+}
+
+.select-filter-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -9px;
+}
+
+div#ui-id-11, div#ui-id-10 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+div#ui-id-2, div#ui-id-5, div#ui-id-9 {
+  padding-top: 16px;
+  padding-bottom: 8px;
+}
+
+div#ui-id-3, div#ui-id-7, div#ui-id-12 {
+  padding-top: 8px;
+  padding-bottom: 20px;
+}
+
+.ui-menu .ui-menu-item-wrapper {
+    padding-left: 16px;
+    
+}
+
+.ui-selectmenu-button.ui-button {
+  width: 190px;
+}
+
+.ui-state-disabled {
+  display: none;
+}
+
+.ui-widget-content {
+ 
+font-family: Helvetica ;
+font-size: 16px;
+font-weight: 400;
+line-height: 19.09px;
+letter-spacing: 0.0015em;
+text-align: left;
+
+}
+
+.ui-menu-item-wrapper:hover, .ui-menu-item-wrapper:active, .ui-menu-item-wrapper:focus {
+  background-color: #467E8B;
+  border-color: #467E8B;
+}
+
+div#ui-id-3.ui-state-active, div#ui-id-2.ui-state-active, div#ui-id-5.ui-state-active, div#ui-id-6.ui-state-active, div#ui-id-7.ui-state-active,
+ div#ui-id-9.ui-state-active, div#ui-id-10.ui-state-active, div#ui-id-11.ui-state-active, div#ui-id-12.ui-state-active {
+  background-color: #467e8b00;
+  border-color: #467e8b00;
+  color: black;
+}
+
+
+.ui-state-active {
+  background-color: #467E8B;
+  border-color: #467E8B;
+}
+
+.ui-button:focus {
+  background-color: transparent;
+}
+
+
+.ui-button:active {
+  background-color: transparent;
+  border-color: #CCCCCC;
+}
+
+.ui-button:hover {
+  background-color: transparent;
+
+}
+
+      .ui-button {
+        padding: 25px 16px 11px 16px;
+        background-color: transparent;
+      }
+
+.ui-selectmenu-button-closed {
+        border-radius: 24px;
+      }
+
+      .ui-selectmenu-button-open {
+        border-top-left-radius: 24px;
+        border-top-right-radius: 24px;
+      }
+
+      .ui-widget-content {
+        border-bottom-left-radius: 24px;
+        border-bottom-right-radius: 24px;
+      }
+
+.ui-selectmenu-text {
+  font-family: Helvetica;
+font-size: 14px;
+font-weight: 400;
+line-height: 19.09px;
+letter-spacing: 0.0015em;
+color: #030303B2;
+}
+
+.label-filter-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #CCCCCC;
+    border-radius: 24px;
+    padding: 8px 16px 13px 16px;
+    width: 190px;
+}
+
+.select-filter-text {
+  font-family: Helvetica;
+  font-size: 12px;
+  font-weight: 500;
+  color: #03030380;
+  margin-bottom: -24px;
+  margin-left: 16px;
+}
+
+
+#Ename ::placeholder {
+font-family: Helvetica;
+font-size: 16px;
+font-weight: 400;
+line-height: 19.09px;
+letter-spacing: 0.0015em;
+text-align: left;
+color: #030303B2;
+
+
+}
+
+input:focus-visible {
+  outline: none;
+  border: none;
+}
+
+
+/* Add responsiveness - display the form controls vertically instead of horizontally on screens that are less than 800px wide 
+@media (max-width: 800px) {
+  .form-inline input {
+    margin: 10px 0;
+  }
+
+  .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+  */
+
+select:required:invalid {
+        color: #666;
+      }
+      option[value=""][disabled] {
+        display: none;
+      }
+      option {
+        color: #000;
+      }
+
+      .flex-item {
+        display: flex;
+        width: 200px;
+        height: 40px;
+      }
+
+
+    </style>
+     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+     <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+     <script>
+     $( function() {
+      $( "#limba" ).selectmenu();
+      $( "#domeniu" ).selectmenu();
+    
+       $( "#regiuni" ).selectmenu();
+     } );
+     </script>
+</head>
+<body>
+    <form class="form-inline" action="#">
+        <div class="select-filter-container">
+            <label class="select-filter-text" for="limba">Limba</label>
+            <select id="limba" name="limba" required>
+                <option disabled="" selected="">Alege</option>
+                <option value="ro">Românǎ</option>
+                <option value="en">English</option>
+              </select>
+        </div>
+        <div class=" select-filter-container">
+            <label class="select-filter-text" for="domeniu">Domeniul de activitate / expertizǎ</label>
+            <select id="domeniu" name="domeniu" required>
+                <option disabled="" selected="">Alege</option>
+                <option value="label">Label</option>
+                <option value="label">Label</option>
+                <option value="label">Label</option>
+              </select>
+        </div>
+        <div class="select-filter-container">
+            <label class="select-filter-text" for="regiuni">Regiunea de activitate</label>
+            <select id="regiuni" name="regiuni" required >
+                <option value="" disabled selected>Alege</option>
+                <option value="toatǎ-republica-moldova">Toatǎ Republica Moldova</option>
+                <option value="nord">Nord</option>
+                <option value="centru">Centru</option>
+                <option value="Sud">Sud</option>
+              </select>
+        </div>
+    <div class=" label-filter-container">
+        <label for="Ename">Nume</label>
+        <input type="text" id="Ename" name="Ename" placeholder="Ex: Jane Smith"></input>
+    </div>
+    <div class="filter-button">
+        <button type="submit" class="flex-item">Filtreazǎ</button>
+    </div>
+      </form>
+    
+</body>
+</html>
